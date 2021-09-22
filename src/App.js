@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import styled from "styled-components";
+import HeaderComponent from "./components/HeaderComponent";
+import FooterComponent from "./components/FooterComponent";
+import { MainComponent } from "./components/MainComponent";
+import ButterProvider from "./components/ButterProvider";
 
-function App() {
+const AppContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ButterProvider>
+      <AppContainer>
+        <HeaderComponent />
+        <MainComponent />
+        <FooterComponent />
+      </AppContainer>
+    </ButterProvider>
   );
 }
-
-export default App;
